@@ -35,12 +35,6 @@ MCUFRIEND_kbv tft;
 #define BLUE        0x003F
 #define GREY        0x8410
 
-//void setFont(const GFXfont * f )
-void setFont()
-{
-  tft.setFont(&FreeSerif12pt7b);
-}
-
 void setupFonte(void)
 {
 
@@ -51,6 +45,7 @@ void setupFonte(void)
     if (ID == 0xD3D3) ID = 0x9481; //force ID if write-only display
     tft.begin(ID);
     tft.setRotation(1);
+    tft.setFont(&FreeSerif12pt7b);
 }
 
 void fontePrint(std::string str)
